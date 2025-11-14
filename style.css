@@ -114,6 +114,9 @@ nav a:hover {
 
 .hero-banner {
   height: 614px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-banner {
