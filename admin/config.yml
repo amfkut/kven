@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   branch: main
   repo: amfkut/kven   # 👉 твой репозиторий
   base_url: https://api.netlify.com  # если используешь Netlify Identity
