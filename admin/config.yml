@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ваш-логин/название-репозитория   # ← замените!
+  repo: amfkut/kven   # ← замените!
   branch: main                            # или master
 
 media_folder: "assets/images"
