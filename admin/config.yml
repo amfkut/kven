@@ -1,18 +1,29 @@
 backend:
-  name: git-gateway
-  repo: amfkut/kven
-  branch: main  # или master
+  name: github
+  repo: ваш-логин/название-репозитория   # ← замените!
+  branch: main                            # или master
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
 collections:
-  - name: "pages"
-    label: "Страницы"
+  - name: "homepage"
+    label: "Главная страница"
     files:
-      - name: "homepage"
-        label: "Главная"
-        file: "content/home.md"
+      - name: "hero"
+        label: "Главный блок"
+        file: "content/homepage.json"
         fields:
           - {label: "Заголовок", name: "title", widget: "string"}
-          - {label: "Текст", name: "body", widget: "markdown"}
+          - {label: "Подзаголовок", name: "subtitle", widget: "text"}
+          - {label: "Текст кнопки", name: "buttonText", widget: "string"}
+          - {label: "Изображение", name: "image", widget: "image", media_library: {config: {maxResizableWidth: 1920}}}
+
+      - name: "contacts"
+        label: "Контакты"
+        file: "content/contacts.json"
+        fields:
+          - {label: "Адрес", name: "address", widget: "string"}
+          - {label: "Режим работы", name: "hours", widget: "text"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Телефон", name: "phone", widget: "string"}
