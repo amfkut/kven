@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: amfkut/kven
   branch: main
 
 media_folder: "images"
