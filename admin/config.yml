@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: amfkut/kven
+  name: git-gateway
   branch: main
-  auth_type: implicit
   auth_endpoint: /api/auth  # не трогай, если не знаешь зачем
 
 media_folder: "images"
