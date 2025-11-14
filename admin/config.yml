@@ -1,18 +1,1 @@
 backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "images"
-public_folder: "/images"
-
-collections:
-  - name: "homepage"
-    label: "Главная страница"
-    files:
-      - name: "hero"
-        label: "Главный баннер"
-        file: "content/hero.json"
-        fields:
-          - { label: "Заголовок", name: "title", widget: "string" }
-          - { label: "Подзаголовок", name: "subtitle", widget: "text" }
-          - { label: "Фоновое изображение", name: "image", widget: "image" }
