@@ -261,3 +261,22 @@ if (document.getElementById('map')) {
   outletsMap.on('load', initOutletsMap);
 }
 
+fetch('content/hero.json')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('hero-title').textContent = data.title;
+    document.getElementById('hero-subtitle').innerHTML = data.subtitle.replace(/\n/g, '<br>');
+    
+    // Установка фонового изображения
+    const banner = document.getElementById('hero-banner');
+    banner.style.backgroundImage = `url('${data.image}')`;
+  })
+  .catch(err => {
+    console.error('Не удалось загрузить hero-banner:', err);
+    // fallback
+    document.getElementById('hero-title').textContent = 'Завод “КВЭН”';
+    document.getElementById('hero-subtitle').innerHTML = 
+      'Единственное производственное предприятие<br>от Москвы до Дальнего Востока...';
+    document.getElementById('hero-banner').style.backgroundImage = "url('images/new_main_bg.webp')";
+  });
+
