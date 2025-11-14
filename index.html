@@ -36,18 +36,31 @@
 </nav>
 
 <!-- Баннер с изображением и текстом -->
-<div class="hero-banner">
-  <img src="images/new_main_bg.webp" alt="Завод крабовых палочек — производство высококачественной продукции">
+<div class="hero-banner" id="hero-banner">
+  <img id="hero-image" src="images/new_main_bg.webp" alt="Завод крабовых палочек — производство высококачественной продукции">
   <div class="hero-text">
-    <h2>Завод “КВЭН”</h2>
-    <p>Единственное производственное предприятие<br>
-       от Москвы до Дальнего Востока, которое<br>
-       работает с продуктами на основе сурими.</p>
-    <p>Наш принцип — выпуск исключительно<br>
-       высококачественной продукции с максимальным<br>
-       содержанием натурального сырья и сурими.</p>
+    <h2 id="hero-title">Загрузка...</h2>
+    <p id="hero-subtitle">Загрузка...</p>
   </div>
 </div>
+
+<script>
+  // Загружаем контент из JSON
+  fetch('content/hero.json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('hero-title').textContent = data.title;
+      document.getElementById('hero-subtitle').innerHTML = data.subtitle.replace(/\n/g, '<br>');
+      document.getElementById('hero-image').src = data.image;
+    })
+    .catch(err => {
+      console.error('Не удалось загрузить hero-banner:', err);
+      // Оставляем исходный контент как fallback
+      document.getElementById('hero-title').textContent = 'Завод “КВЭН”';
+      document.getElementById('hero-subtitle').innerHTML = 
+        'Единственное производственное предприятие<br>от Москвы до Дальнего Востока, которое<br>работает с продуктами на основе сурими.<br><br>Наш принцип — выпуск исключительно<br>высококачественной продукции с максимальным<br>содержанием натурального сырья и сурими.';
+    });
+</script>
 
 <!-- Единый блок: "Компания в цифрах" + статистика -->
 <section class="company-section">
