@@ -1,13 +1,10 @@
-CMS.init({
-  config: {
-    backend: {
-      name: "github",
-      repo: "amfkut/kven", // 👉 твой репозиторий
-      branch: "main",
-    },
+backend:
+  name: github
+  repo: amfkut/kven  # например: username/my-site
+  branch: main  # или master
 
-    media_folder: "images",
-    public_folder: "/images",
+media_folder: "images"  # куда загружать изображения
+public_folder: "/images"  # путь для ссылок
 
 collections:
   - name: homepage
@@ -20,10 +17,3 @@ collections:
           - { label: Заголовок, name: "title", widget: "string" }
           - { label: Подзаголовок, name: "subtitle", widget: "text" }
           - { label: Изображение фона, name: "image", widget: "image" }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-});
