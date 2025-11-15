@@ -11,8 +11,20 @@ collections_config:
     disable_file_actions: false
   products:
     path: products
+    glob:
+      -
     icon: groups
     disable_url: false
+    preview:
+      text:
+        - text:
+      subtext:
+      icon:
+      icon_color:
+      icon_background_color:
+      image:
+      metadata:
+      gallery:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
