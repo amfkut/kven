@@ -37,15 +37,10 @@
 
 <!-- Баннер с изображением и текстом -->
 <div class="hero-banner">
-  <img src="images/new_main_bg.webp" alt="Завод крабовых палочек — производство высококачественной продукции">
+  <img id="hero-image" src="images/new_main_bg.webp" alt="Завод крабовых палочек — производство высококачественной продукции">
   <div class="hero-text">
-    <h2>Завод “КВЭН”</h2>
-    <p>Единственное производственное предприятие<br>
-       от Москвы до Дальнего Востока, которое<br>
-       работает с продуктами на основе сурими.</p>
-    <p>Наш принцип — выпуск исключительно<br>
-       высококачественной продукции с максимальным<br>
-       содержанием натурального сырья и сурими.</p>
+    <h2 id="hero-title">Загрузка...</h2>
+    <p id="hero-subtitle">Загрузка...</p>
   </div>
 </div>
 
@@ -270,5 +265,42 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- === СКРИПТ ДЛЯ ЗАГРУЗКИ КОНТЕНТА ИЗ hero.json === -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('content/hero.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Файл content/hero.json не найден');
+        return response.json();
+      })
+      .then(data => {
+        // Обновляем заголовок
+        const titleEl = document.getElementById('hero-title');
+        if (titleEl && data.title) {
+          titleEl.textContent = data.title;
+        }
+
+        // Обновляем подзаголовок (поддержка двух абзацев через \n\n)
+        const subtitleEl = document.getElementById('hero-subtitle');
+        if (subtitleEl && data.subtitle) {
+          const parts = data.subtitle.split('\n\n');
+          subtitleEl.innerHTML = parts.map(part => part.replace(/\n/g, '<br>')).join('<br><br>');
+        }
+
+        // Обновляем изображение
+        const imgEl = document.getElementById('hero-image');
+        if (imgEl && data.image) {
+          imgEl.src = data.image;
+          imgEl.alt = data.title || 'Баннер завода КВЭН';
+        }
+      })
+      .catch(err => {
+        console.error('Ошибка загрузки hero.json:', err);
+        // Fallback — оставляем оригинальные значения (они уже в HTML)
+      });
+  });
+</script>
+
 </body>
 </html>
