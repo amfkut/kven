@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   # repo: amfkut/kven  # например: username/my-site
   branch: main  # или master
-  site_id: zkven
 
 media_folder: "images"  # куда загружать изображения
 public_folder: "/images"  # путь для ссылок
