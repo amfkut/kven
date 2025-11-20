@@ -35,13 +35,9 @@
   <a href="vacancies.html">Вакансии</a>
 </nav>
 
-<!-- Баннер с изображением и текстом -->
+<!-- Баннер с изображением  -->
 <div class="hero-banner">
-  <img id="hero-image" src="images/new_main_bg.webp" alt="Завод крабовых палочек — производство высококачественной продукции">
-  <div class="hero-text">
-    <h2 id="hero-title">Загрузка...</h2>
-    <p id="hero-subtitle">Загрузка...</p>
-  </div>
+  <img src="images/new_main_bg.jpg" alt="Завод “КВЭН” ">
 </div>
 
 <!-- Единый блок: "Компания в цифрах" + статистика -->
@@ -85,7 +81,7 @@
   <div class="container">
     <div class="work-content">
       <div class="work-image">
-        <img src="images/beach_crab_new.webp" alt="Краб — символ качества продукции завода КВЭН">
+        <img src="images/beach_crab_new.jpg" alt="Краб — символ качества продукции завода КВЭН">
       </div>
       <div class="work-text">
         <h2>Как мы <span class="red-text">работаем</span></h2>
@@ -265,42 +261,6 @@
 </footer>
 
 <script src="script.js"></script>
-
-<!-- === СКРИПТ ДЛЯ ЗАГРУЗКИ КОНТЕНТА ИЗ hero.json === -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('content/hero.json')
-      .then(response => {
-        if (!response.ok) throw new Error('Файл content/hero.json не найден');
-        return response.json();
-      })
-      .then(data => {
-        // Обновляем заголовок
-        const titleEl = document.getElementById('hero-title');
-        if (titleEl && data.title) {
-          titleEl.textContent = data.title;
-        }
-
-        // Обновляем подзаголовок (поддержка двух абзацев через \n\n)
-        const subtitleEl = document.getElementById('hero-subtitle');
-        if (subtitleEl && data.subtitle) {
-          const parts = data.subtitle.split('\n\n');
-          subtitleEl.innerHTML = parts.map(part => part.replace(/\n/g, '<br>')).join('<br><br>');
-        }
-
-        // Обновляем изображение
-        const imgEl = document.getElementById('hero-image');
-        if (imgEl && data.image) {
-          imgEl.src = data.image;
-          imgEl.alt = data.title || 'Баннер завода КВЭН';
-        }
-      })
-      .catch(err => {
-        console.error('Ошибка загрузки hero.json:', err);
-        // Fallback — оставляем оригинальные значения (они уже в HTML)
-      });
-  });
-</script>
 
 </body>
 </html>
