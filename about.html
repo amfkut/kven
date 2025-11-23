@@ -5,6 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>О компании — Завод крабовых палочек “КВЭН”</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Стили для нового блока "Деятельность в цифрах" */
+    .activity-digits-section {
+      background-color: white;
+      padding: 4rem 0;
+    }
+    .activity-digits-content {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .digits-text {
+      flex: 1.1;
+    }
+    .digits-text h1 {
+      font-size: 52px;
+      color: #333;
+      margin: 0 0 2.5rem;
+      line-height: 1.2;
+    }
+    .digits-text .red-text {
+      color: #DA291C;
+    }
+    .digits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+    }
+    .digit-card {
+      background-color: #FFF5F5;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .digit-card h2 {
+      font-size: 52px;
+      color: #DA291C;
+      margin: 0 0 0.8rem;
+      line-height: 1.1;
+    }
+    .digit-card p {
+      font-size: 16px;
+      line-height: 1.4;
+      color: #333;
+      margin: 0;
+    }
+    .digits-image {
+      flex: 0 0 480px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    .digits-image img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 1200px) {
+      .activity-digits-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .digits-image {
+        flex: none;
+        width: 100%;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+      .digits-image img {
+        height: auto;
+        max-height: none;
+      }
+    }
+    @media (max-width: 768px) {
+      .activity-digits-section {
+        padding: 2.5rem 0;
+      }
+      .digits-text h1 {
+        font-size: 40px;
+      }
+      .digit-card h2 {
+        font-size: 44px;
+      }
+      .digits-grid {
+        grid-template-columns: 1fr;
+      }
+      .digits-image {
+        height: 250px;
+      }
+    }
+    @media (max-width: 480px) {
+      .digits-text h1 {
+        font-size: 34px;
+      }
+      .digit-card h2 {
+        font-size: 40px;
+      }
+      .digit-card p {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -47,7 +165,6 @@
 </div>
 
 <!-- ВОЗВРАЩЁННЫЙ двухколоночный блок -->
-<!-- Двухколоночный блок: слева заголовок, справа описание -->
 <section class="about-highlight">
   <div class="container">
     <div class="about-content">
@@ -83,7 +200,6 @@
 <section class="crab-production-section">
   <div class="container">
     <div class="crab-production-content">
-      <!-- ТЕКСТ СЛЕВА -->
       <div class="crab-text">
         <div class="crab-icon"></div>
         <h1>Производство<br><span class="crab-highlight">крабовых палочек</span></h1>
@@ -91,7 +207,6 @@
         <p>По прошествии многих лет у нас имеются рецептуры, которые<br>пока никто не может повторить, поскольку они являются<br>результатом кропотливой работы наших технологов, обладающих<br>уникальными компетенциями.</p>
         <p>АО «КВЭН» является единственным производителем крабовых палочек<br>на Дальнем Востоке. Сегодня крабовые палочки «КВЭН» — эталон вкуса<br>и качества в регионе. В производстве используются высококачественный<br>сурими Российского производства, натуральные специи и только<br>отборное рыбное сырье.</p>
       </div>
-      <!-- КАРТИНКА СПРАВА -->
       <div class="crab-image">
         <img src="images/factory_pic_2.webp" alt="Производство крабовых палочек КВЭН">
       </div>
@@ -106,7 +221,7 @@
       <div class="factory-capacity-text">
         <div class="factory-capacity-icon"></div>
         <h1><span class="capacity-highlight">Производственные</span><br>мощности</h1>
-        <p>В настоящее время АО «КВЭН» занимает площадь 3 000 кв м и имеет<br>в своем составе следующие подразделения: цех по производству<br>продуктов из сурими (крабовые палочки, снежный краб, супер снежный<br>краб), колбасный цех, цех полуфабрикатов, холодильник, вспомогательные:<br>котельная для обеспечения производства, административный корпус,<br>складские помещения. Сырьё закупается и хранится в холодильниках общей<br>вместимостью до 150 т.</p>
+        <p>В настоящее время АО «КВЭН» занимает площадь 3 000 кв м и имеет<br>в своем составе следующие подразделения: цех по производству<br>продуктов из сурими (крабовые палочки, снежный краб, супер снежный<br>краб), холодильник, вспомогательные:<br>котельная для обеспечения производства, административный корпус,<br>складские помещения. Сырьё закупается и хранится в холодильниках общей<br>вместимостью до 150 т.</p>
       </div>
       <div class="factory-capacity-image">
         <img src="images/factory_pic_3.webp" alt="Производственные мощности завода КВЭН">
@@ -134,7 +249,41 @@
   </div>
 </section>
 
-<!-- Футер — ЕДИНЫЙ СТИЛЬ -->
+<!-- НОВЫЙ БЛОК: Деятельность в цифрах -->
+<section class="activity-digits-section">
+  <div class="activity-digits-content">
+    <div class="digits-text">
+      <h1>Деятельность АО «КВЭН»<br><span class="red-text">в цифрах</span></h1>
+      <div class="digits-grid">
+        <div class="digit-card">
+          <h2>15</h2>
+          <p>Наименований продукции выпускает завод ежемесячно</p>
+        </div>
+        <div class="digit-card">
+          <h2>3000 м²</h2>
+          <p>АО «КВЭН» занимает площадь 3 000 кв м</p>
+        </div>
+        <div class="digit-card">
+          <h2>1.6 к тонн</h2>
+          <p>Такой объем продукции наш завод производит в год</p>
+        </div>
+        <div class="digit-card">
+          <h2>2400</h2>
+          <p>Приблизительно столько магазинов продают наш ассортимент</p>
+        </div>
+        <div class="digit-card">
+          <h2>107</h2>
+          <p>Сотрудников трудится на комбинате</p>
+        </div>
+      </div>
+    </div>
+    <div class="digits-image">
+      <img src="images/Digits.jpeg" alt="Деятельность завода КВЭН в цифрах">
+    </div>
+  </div>
+</section>
+
+<!-- Футер -->
 <footer class="main-footer">
   <div class="footer-grid-wrapper">
     <div class="footer-grid">
@@ -145,11 +294,8 @@
       </div>
       <div class="footer-col">
         <ul class="footer-links">
-          <li><a href="products/crab_sticks.html">Крабовые палочки</a></li>
-          <li><a href="products/snow_crab.html">Снежный краб</a></li>
-          <li><a href="products/boiled_sausage.html">Колбаса вареная рыбная</a></li>
-          <li><a href="products/smoked_sausage.html">Колбаса рыбная полукопченая</a></li>
-          <li><a href="products/minced_semi.html">Рубленые полуфабрикаты</a></li>
+          <li><a href="products.html">Крабовые палочки</a></li>
+          <li><a href="products.html">Снежный краб</a></li>
         </ul>
       </div>
       <div class="footer-col">
