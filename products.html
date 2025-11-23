@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Продукция — Завод крабовых палочек “КВЭН”</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin: 6px 0;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .sidebar a.active {
+      background-color: #DA291C;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
 
@@ -37,68 +57,96 @@
   </div>
 </nav>
 
-<main class="container">
-  <h1>Наша продукция</h1>
-  <p>Ассортимент завода “КВЭН” включает более 26 наименований рыбной продукции, в том числе:</p>
-
-  <div class="products-grid">
-    <div class="product">
-      <div class="product-img">
-        <img src="images/crab_sticks.jpg" alt="Крабовые палочки КВЭН">
-      </div>
-      <h3>Крабовые палочки</h3>
-      <p>Классика российского стола из натурального сурими.</p>
-      <a href="products/crab_sticks.html" class="btn">Подробнее</a>
+<!-- Основной контент -->
+<div class="page-wrapper">
+  <!-- Левый сайдбар -->
+  <aside class="sidebar">
+    <div class="sidebar-block">
+      <h3>Производители</h3>
+      <ul class="filter-list">
+        <li><a href="#" data-category="kven">КВЭН</a></li>
+        <li><a href="#" data-category="tokimo">TOKIMO</a></li>
+      </ul>
     </div>
 
-    <div class="product">
-      <div class="product-img">
-        <img src="images/snow_crab.jpg" alt="Снежный краб КВЭН">
-      </div>
-      <h3>Снежный краб</h3>
-      <p>Уникальная имитация крабового мяса с волокнистой структурой.</p>
-      <a href="products/snow_crab.html" class="btn">Подробнее</a>
+    <div class="sidebar-block">
+      <h3>Тип продукции</h3>
+      <ul class="filter-list">
+        <li><a href="#" data-category="all">Все товары</a></li>
+        <li><a href="#" data-category="crab-sticks">Крабовые палочки</a></li>
+        <li><a href="#" data-category="snow-crab">Снежный краб</a></li>
+      </ul>
     </div>
 
-    <div class="product">
-      <div class="product-img">
-        <img src="images/super_snow_crab.jpg" alt="Супер снежный краб КВЭН">
-      </div>
-      <h3>Супер снежный краб</h3>
-      <p>Премиум-версия с повышенным содержанием сурими.</p>
-      <a href="products/super_snow_crab.html" class="btn">Подробнее</a>
+    <div class="sidebar-block">
+      <h3>Фильтры</h3>
+      <ul class="filter-list">
+        <li><a href="#" data-category="all">Все</a></li>
+        <li><a href="#" data-category="bestseller">Хиты продаж</a></li>
+        <li><a href="#" data-category="new">Новинки</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Сетка товаров -->
+  <main class="products-main">
+    <!-- 1. TOKIMO: Крабовые палочки -->
+    <div class="product-card" data-category="tokimo crab-sticks">
+      <a href="products/crab_sticks.html">
+        <img src="products/images/tokimo_crab_stiks_.jpg" alt="Крабовые палочки TOKIMO">
+        <div class="title-main">КРАБОВЫЕ ПАЛОЧКИ</div>
+        <div class="title-sub">Крабовые палочки</div>
+      </a>
     </div>
 
-    <div class="product">
-      <div class="product-img">
-        <img src="images/aqualanch.jpg" alt="Рыбная колбаса Акваланч">
-      </div>
-      <h3>Рыбная колбаса «Акваланч»</h3>
-      <p>Эксклюзивная полукопчёная колбаса из белых сортов рыбы.</p>
-      <a href="products/aqualanch.html" class="btn">Подробнее</a>
+    <!-- 2. КВЭН: Крабовые палочки с мясом краба — хит -->
+    <div class="product-card" data-category="kven crab-sticks bestseller">
+      <a href="products/crab_sticks_meat.html">
+        <img src="products/images/kven_sticks_meat.jpg" alt="Крабовые палочки с мясом краба">
+        <div class="title-main">КРАБОВЫЕ ПАЛОЧКИ С МЯСОМ КРАБА</div>
+        <div class="title-sub">Крабовые палочки</div>
+      </a>
     </div>
 
-    <div class="product">
-      <div class="product-img">
-        <img src="images/smoked_sausage.jpg" alt="Полукопчёная рыбная колбаса">
-      </div>
-      <h3>Колбаса рыбная полукопчёная</h3>
-      <p>Традиционный продукт с дымным ароматом и нежной текстурой.</p>
-      <a href="products/smoked_sausage.html" class="btn">Подробнее</a>
+    <!-- 3. КВЭН: Охлаждённые крабовые палочки -->
+    <div class="product-card" data-category="kven crab-sticks">
+      <a href="products/crab_sticks_meat_cool.html">
+        <img src="products/images/kven_sticks_meat_cool.jpg" alt="Охлаждённые крабовые палочки с мясом краба">
+        <div class="title-main">КРАБОВЫЕ ПАЛОЧКИ С МЯСОМ КРАБА ОХЛАЖДЕННЫЕ</div>
+        <div class="title-sub">Крабовые палочки</div>
+      </a>
     </div>
 
-    <div class="product">
-      <div class="product-img">
-        <img src="images/minced_semi.jpg" alt="Рубленые полуфабрикаты">
-      </div>
-      <h3>Рубленые полуфабрикаты</h3>
-      <p>Котлеты, биточки и наггетсы из натурального рыбного фарша.</p>
-      <a href="products/minced_semi.html" class="btn">Подробнее</a>
+    <!-- 4. КВЭН: Снежный краб охлаждённый -->
+    <div class="product-card" data-category="kven snow-crab">
+      <a href="products/snow_crab_cool.html">
+        <img src="products/images/kven_snow_crab_cool.jpg" alt="Охлаждённый снежный краб">
+        <div class="title-main">СНЕЖНЫЙ КРАБ ОХЛАЖДЕННЫЙ</div>
+        <div class="title-sub">Снежный краб</div>
+      </a>
     </div>
-  </div>
-</main>
 
-<!-- === ФУТЕР — ТОЧНО КАК В index.html === -->
+    <!-- 5. TOKIMO: Снежный краб -->
+    <div class="product-card" data-category="tokimo snow-crab">
+      <a href="products/snow_crab.html">
+        <img src="products/images/tokimo_snow_crab_.jpg" alt="Снежный краб TOKIMO">
+        <div class="title-main">СНЕЖНЫЙ КРАБ</div>
+        <div class="title-sub">Снежный краб</div>
+      </a>
+    </div>
+
+    <!-- 6. TOKIMO: Супер снежный краб -->
+    <div class="product-card" data-category="tokimo snow-crab">
+      <a href="products/super_snow_crab.html">
+        <img src="products/images/tokimo_super_snow_crab_.jpg" alt="Супер снежный краб TOKIMO">
+        <div class="title-main">СУПЕР СНЕЖНЫЙ КРАБ</div>
+        <div class="title-sub">Снежный краб</div>
+      </a>
+    </div>
+  </main>
+</div>
+
+<!-- Футер -->
 <footer class="main-footer">
   <div class="footer-grid-wrapper">
     <div class="footer-grid">
@@ -109,11 +157,8 @@
       </div>
       <div class="footer-col">
         <ul class="footer-links">
-          <li><a href="products/crab_sticks.html">Крабовые палочки</a></li>
-          <li><a href="products/snow_crab.html">Снежный краб</a></li>
-          <li><a href="products/boiled_sausage.html">Колбаса вареная рыбная</a></li>
-          <li><a href="products/smoked_sausage.html">Колбаса рыбная полукопченая</a></li>
-          <li><a href="products/minced_semi.html">Рубленые полуфабрикаты</a></li>
+          <li><a href="products.html">Крабовые палочки</a></li>
+          <li><a href="products.html">Снежный краб</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -136,6 +181,40 @@
     © АО «КВЭН». Все права сохранены.
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterLinks = document.querySelectorAll('.sidebar a[data-category]');
+    const productCards = document.querySelectorAll('.product-card');
+
+    function filterProducts(selectedCategory) {
+      productCards.forEach(card => {
+        const categories = card.dataset.category.split(' ');
+        if (selectedCategory === 'all' || categories.includes(selectedCategory)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    filterLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        filterLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        filterProducts(this.dataset.category);
+      });
+    });
+
+    // Активируем "Все товары" при загрузке
+    const allLink = document.querySelector('.sidebar a[data-category="all"]');
+    if (allLink) {
+      allLink.classList.add('active');
+      filterProducts('all');
+    }
+  });
+</script>
 
 </body>
 </html>
