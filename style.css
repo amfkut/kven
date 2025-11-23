@@ -248,7 +248,7 @@ nav a:hover {
 .work-image {
   width: 650px;
   height: auto;
-  max-height: 500px; /* ← ограничить, если нужно */
+  max-height: 500px;
 }
 .work-image img {
   width: 100%;
@@ -764,11 +764,11 @@ main {
   }
 }
 /* ========================================
-   Футер — ЕДИНЫЙ СТИЛЬ
+   Футер — ОБНОВЛЁННЫЙ (400px на десктопе)
 ======================================== */
 .main-footer {
   position: relative;
-  height: 600px;
+  min-height: 400px;
   background-image: url('images/magicquill.png');
   background-size: cover;
   background-position: center;
@@ -782,13 +782,11 @@ main {
 }
 .footer-grid-wrapper {
   padding-left: 115px;
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  padding-top: 60px;
+  padding-top: 40px;
   padding-right: 40px;
   max-width: calc(1200px + 115px);
   margin: 0 auto;
+  width: 100%;
 }
 .footer-grid {
   display: grid;
@@ -864,10 +862,14 @@ main {
   }
 }
 @media (max-width: 768px) {
+  .main-footer {
+    min-height: auto;
+    padding-bottom: 30px;
+  }
   .footer-grid-wrapper {
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 100px;
+    padding-top: 60px;
   }
   .footer-copyright {
     padding-left: 20px;
@@ -932,8 +934,8 @@ main {
   }
   .work-image img{
     width: 100%;
-    height: auto;        /* ← чтобы изображение не растягивалось */
-    object-fit: contain; /* ← важно: показываем всё изображение */
+    height: auto;
+    object-fit: contain;
     display: block;
   }
   .products-grid {
@@ -1545,334 +1547,38 @@ main {
   }
 }
 /* ========================================
-   Блок: Деятельность завода
+   Блоки "О компании": Деятельность, Производство и т.д.
 ======================================== */
-.factory-activity-section {
-  background-color: white;
-  padding: 4rem 0;
-}
-.factory-activity-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-}
-.factory-text {
-  flex: 1;
-  position: relative;
-  padding-top: 2rem;
-}
-.factory-icon {
-  position: absolute;
-  top: -28px;
-  left: 0;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background-color: #DA291C;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 3l9 5v11c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V8l9-5zm0 2.09L6 8.41v10.18l6 3.22 6-3.22V8.41L12 5.09z'/%3E%3C/svg%3E");
-  background-size: 50% 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.factory-text h1 {
-  font-size: 52px;
-  color: #333;
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
-}
-.factory-text p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #333;
-  margin: 0 0 1rem;
-}
-.factory-image {
-  flex: 0 0 auto;
-  width: 520px;
-  height: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-.factory-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* Адаптивность */
-@media (max-width: 992px) {
-  .factory-activity-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .factory-text {
-    padding-top: 0;
-  }
-  .factory-icon {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0 auto 1.5rem;
-  }
-  .factory-text h1 {
-    font-size: 40px;
-  }
-  .factory-text p {
-    font-size: 16px;
-  }
-  .factory-image {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    margin-top: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .factory-activity-section {
-    padding: 2.5rem 0;
-  }
-  .factory-text h1 {
-    font-size: 34px;
-  }
-  .factory-text p {
-    font-size: 15px;
-  }
-  .factory-image {
-    height: 250px;
-  }
-}
-/* ========================================
-   Блок: Производство крабовых палочек
-======================================== */
-.crab-production-section {
-  background-color: white;
-  padding: 4rem 0;
-}
-.crab-production-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-  flex-direction: row-reverse;
-}
-.crab-text {
-  flex: 1;
-  position: relative;
-  padding-top: 2rem;
-}
-.crab-icon {
-  position: absolute;
-  top: -28px;
-  left: 0;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background-color: #d111d1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-10h2v2h-2zm0 3h2v2h-2z'/%3E%3C/svg%3E");
-  background-size: 50% 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.crab-text h1 {
-  font-size: 52px;
-  color: #333;
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
-}
-.crab-highlight {
-  color: #d111d1;
-}
-.crab-text p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: #333;
-  margin: 0 0 1rem;
-}
-.crab-image {
-  flex: 0 0 auto;
-  width: 520px;
-  height: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-.crab-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* Адаптивность */
-@media (max-width: 992px) {
-  .crab-production-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .crab-text {
-    padding-top: 0;
-  }
-  .crab-icon {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0 auto 1.5rem;
-  }
-  .crab-text h1 {
-    font-size: 40px;
-  }
-  .crab-text p {
-    font-size: 16px;
-  }
-  .crab-image {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    margin-top: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .crab-production-section {
-    padding: 2.5rem 0;
-  }
-  .crab-text h1 {
-    font-size: 34px;
-  }
-  .crab-highlight {
-    font-size: 1.1em;
-  }
-  .crab-text p {
-    font-size: 15px;
-  }
-  .crab-image {
-    height: 250px;
-  }
-}
-/* Общий стиль для текста в блоках "Деятельность" и "Производство" */
-.factory-activity-section .factory-text p,
-.crab-production-section .crab-text p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 0 1rem;
-}
-/* ========================================
-   Блок: Производственные мощности
-======================================== */
-.factory-capacity-section {
-  background-color: white;
-  padding: 4rem 0;
-}
-.factory-capacity-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-}
-.factory-capacity-text {
-  flex: 1;
-  position: relative;
-  padding-top: 2rem;
-}
-.factory-capacity-icon {
-  position: absolute;
-  top: -28px;
-  left: 0;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background-color: #1fafdc;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 3l9 5v11c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V8l9-5zm0 2.09L6 8.41v10.18l6 3.22 6-3.22V8.41L12 5.09z'/%3E%3C/svg%3E");
-  background-size: 50% 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.capacity-highlight {
-  color: #1fafdc;
-}
-.factory-capacity-text h1 {
-  font-size: 52px;
-  color: #333;
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
-}
-.factory-capacity-text p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 0 1rem;
-}
-.factory-capacity-image {
-  flex: 0 0 auto;
-  width: 520px;
-  height: 350px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-.factory-capacity-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* Адаптивность */
-@media (max-width: 992px) {
-  .factory-capacity-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .factory-capacity-text {
-    padding-top: 0;
-  }
-  .factory-capacity-icon {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0 auto 1.5rem;
-  }
-  .factory-capacity-text h1 {
-    font-size: 40px;
-  }
-  .factory-capacity-text p {
-    font-size: 15px;
-  }
-  .factory-capacity-image {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    margin-top: 2rem;
-  }
-}
-@media (max-width: 768px) {
-  .factory-capacity-section {
-    padding: 2.5rem 0;
-  }
-  .factory-capacity-text h1 {
-    font-size: 34px;
-  }
-  .factory-capacity-image {
-    height: 250px;
-  }
-}
-/* ========================================
-   Блок: Контроль качества
-======================================== */
+/* Общие стили для иконок и текста */
+.factory-activity-section,
+.crab-production-section,
+.factory-capacity-section,
 .quality-control-section {
   background-color: white;
   padding: 4rem 0;
 }
+.factory-activity-content,
+.crab-production-content,
+.factory-capacity-content,
 .quality-control-content {
   display: flex;
   align-items: flex-start;
   gap: 3rem;
 }
+.crab-production-content {
+  flex-direction: row-reverse;
+}
+.factory-text,
+.crab-text,
+.factory-capacity-text,
 .quality-control-text {
   flex: 1;
   position: relative;
   padding-top: 2rem;
 }
+.factory-icon,
+.crab-icon,
+.factory-capacity-icon,
 .quality-control-icon {
   position: absolute;
   top: -28px;
@@ -1880,27 +1586,50 @@ main {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background-color: #1ec43b;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
   background-size: 50% 50%;
   background-position: center;
   background-repeat: no-repeat;
 }
-.quality-highlight {
-  color: #1ec43b;
+.factory-icon {
+  background-color: #DA291C;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 3l9 5v11c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V8l9-5zm0 2.09L6 8.41v10.18l6 3.22 6-3.22V8.41L12 5.09z'/%3E%3C/svg%3E");
 }
+.crab-icon {
+  background-color: #d111d1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-10h2v2h-2zm0 3h2v2h-2z'/%3E%3C/svg%3E");
+}
+.factory-capacity-icon {
+  background-color: #1fafdc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 3l9 5v11c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V8l9-5zm0 2.09L6 8.41v10.18l6 3.22 6-3.22V8.41L12 5.09z'/%3E%3C/svg%3E");
+}
+.quality-control-icon {
+  background-color: #1ec43b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E");
+}
+.factory-text h1,
+.crab-text h1,
+.factory-capacity-text h1,
 .quality-control-text h1 {
   font-size: 52px;
   color: #333;
   margin: 0 0 1.5rem;
   line-height: 1.2;
 }
+.factory-text p,
+.crab-text p,
+.factory-capacity-text p,
 .quality-control-text p {
   font-size: 15px;
   line-height: 1.6;
   color: #333;
   margin: 0 0 1rem;
 }
+.crab-highlight { color: #d111d1; }
+.capacity-highlight { color: #1fafdc; }
+.quality-highlight { color: #1ec43b; }
+.factory-image,
+.crab-image,
+.factory-capacity-image,
 .quality-control-image {
   flex: 0 0 auto;
   width: 520px;
@@ -1909,21 +1638,33 @@ main {
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+.factory-image img,
+.crab-image img,
+.factory-capacity-image img,
 .quality-control-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-/* Адаптивность */
+/* Адаптивность для всех блоков */
 @media (max-width: 992px) {
+  .factory-activity-content,
+  .crab-production-content,
+  .factory-capacity-content,
   .quality-control-content {
     flex-direction: column;
     text-align: center;
   }
+  .factory-text,
+  .crab-text,
+  .factory-capacity-text,
   .quality-control-text {
     padding-top: 0;
   }
+  .factory-icon,
+  .crab-icon,
+  .factory-capacity-icon,
   .quality-control-icon {
     position: relative;
     top: 0;
@@ -1931,12 +1672,21 @@ main {
     transform: translateX(-50%);
     margin: 0 auto 1.5rem;
   }
+  .factory-text h1,
+  .crab-text h1,
+  .factory-capacity-text h1,
   .quality-control-text h1 {
     font-size: 40px;
   }
+  .factory-text p,
+  .crab-text p,
+  .factory-capacity-text p,
   .quality-control-text p {
     font-size: 15px;
   }
+  .factory-image,
+  .crab-image,
+  .factory-capacity-image,
   .quality-control-image {
     width: 100%;
     max-width: 600px;
@@ -1945,13 +1695,194 @@ main {
   }
 }
 @media (max-width: 768px) {
+  .factory-activity-section,
+  .crab-production-section,
+  .factory-capacity-section,
   .quality-control-section {
     padding: 2.5rem 0;
   }
+  .factory-text h1,
+  .crab-text h1,
+  .factory-capacity-text h1,
   .quality-control-text h1 {
     font-size: 34px;
   }
+  .factory-image,
+  .crab-image,
+  .factory-capacity-image,
   .quality-control-image {
     height: 250px;
+  }
+}
+/* ========================================
+   Сайдбар и карточки продукции — финальная версия
+======================================== */
+.page-wrapper {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden; /* Защита от горизонтального скролла */
+}
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.sidebar-block {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.sidebar-block h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+.sidebar-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-block li {
+  margin-bottom: 0.6rem;
+}
+.sidebar-block a {
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+.sidebar-block a:hover {
+  color: #DA291C;
+  text-decoration: underline;
+}
+/* Сетка товаров */
+.products-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  min-width: 0;
+}
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Вся карточка — ссылка */
+.product-card > a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.product-card img {
+  width: 230px;
+  height: 260px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+/* Эффект при наведении: приближение */
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.product-card:hover img {
+  transform: scale(1.05);
+}
+/* Текст без подчёркивания */
+.product-card .title-main,
+.product-card .title-sub {
+  margin: 0.4rem 0 0;
+  line-height: 1.3;
+}
+.product-card .title-main {
+  font-size: 19px;
+  font-weight: bold;
+  color: #333;
+}
+.product-card .title-sub {
+  font-size: 14px;
+  color: #666;
+}
+/* === 3 колонки только на >1200px === */
+@media (max-width: 1200px) {
+  .products-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-card img {
+    width: 200px;
+    height: 230px;
+  }
+}
+/* Защита от горизонтального скролла в 850–740px */
+@media (max-width: 850px) {
+  .page-wrapper {
+    padding: 1.8rem 1rem;
+    gap: 1.4rem;
+  }
+  .product-card img {
+    width: 190px;
+    height: 220px;
+  }
+}
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .sidebar-block {
+    width: calc(50% - 0.75rem);
+  }
+  .products-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.3rem;
+  }
+  .product-card img {
+    width: 180px;
+    height: 210px;
+  }
+  .product-card .title-main {
+    font-size: 17px;
+  }
+  .product-card .title-sub {
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar-block {
+    width: 100%;
+  }
+  .products-main {
+    gap: 1.1rem;
+  }
+  .product-card img {
+    width: 150px;
+    height: 180px;
+  }
+  .product-card .title-main {
+    font-size: 16px;
+  }
+  .product-card .title-sub {
+    font-size: 12px;
   }
 }
